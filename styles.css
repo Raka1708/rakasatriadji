@@ -1,0 +1,125 @@
+/* Video background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+/* Umum */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #680775;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  background-color: rgba(185, 79, 185, 0.829);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(236, 210, 235, 0.2);
+  border: 2px solid #ff00cc;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc, 0 0 30px #ff00cc;
+}
+
+input, textarea {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffffd2;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  background-color: #ecf3f2;
+  box-shadow: 0 0 10px #d5e2e0, 0 0 20px #dc38eb;
+}
+
+button {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #e5f8f4;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 5px rgba(151, 8, 151, 0.2);
+}
+
+button:hover {
+  background-color: #e8f0ee;
+  box-shadow: 0 0 15px #e5e7e7, 0 0 30px #e2e7e6;
+}
+
+#messages {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #a563b9;
+  border-radius: 5px;
+  text-align: left;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(255, 58, 245, 0.3);
+}
+
+.message {
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+}
+
+.message:last-child {
+  border-bottom: none;
+}
+
+button {
+  width: auto;
+  background-color: #ef74f3;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c02bb4;
+}
+
+/* Menyembunyikan dan menampilkan bagian tertentu */
+#login-section, #message-section, #admin-section {
+  display: none;
+}
+
+#login-section {
+  display: block;
+}
