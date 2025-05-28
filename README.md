@@ -1,2 +1,0 @@
-# rakasatriadji
-website personal
