@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang Raka</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      min-height: 100vh;
+    }
+
+    nav {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px 30px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 20px;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00c3ff;
+    }
+
+    .about-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      max-width: 800px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease;
+      margin-top: 100px;
+    }
+
+    .about-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 20px;
+    }
+
+    .about-card h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .about-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #eee;
+    }
+
+    .socials {
+      margin-top: 20px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #1e90ff;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #00c3ff;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="/index.html">🏠 Home</a>
+  </nav>
+
+  <!-- About Card -->
+  <div class="about-card">
+    <img src="/asset/raka.png" alt="Foto Raka" />
+    <h1>Raka Satri Adji</h1>
+    <p>
+      Halo semuanya! 👋 Perkenalkan, nama saya Raka Satri Adji, dari Cianjur, Jawa Barat. 
+      Lahir dan besar di kota kecil tapi penuh cerita 😄. Orangnya santai, gampang nyambung ngobrol, 
+      dan suka belajar hal baru. Seneng bisa kenalan sama kalian semua. Let’s grow together!  
+      Yuk, kenalan lebih jauh lewat media sosial saya!
+    </p>
+    <div class="socials">
+      <a href="https://wa.me/6285722285670" target="_blank">WhatsApp</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=rakasatriadji17@gmail.com" target="_blank">Email</a>
+    </div>
+  </div>
+
+  <footer>© 2025 Raka Satri Adji</footer>
+
+</body>
+</html>
