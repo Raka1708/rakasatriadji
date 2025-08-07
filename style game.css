@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #111, #1e1e1e);
+  color: #fff;
+}
+
+/* ✅ Navbar */
+nav.main-navbar {
+  background-color: #1e1e1e;
+  padding: 15px 30px;
+  border-bottom: 2px solid #444;
+}
+
+nav.main-navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav.main-navbar li {
+  margin-right: 20px;
+}
+
+nav.main-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav.main-navbar a:hover {
+  color: #1e90ff;
+}
+
+/* ✅ Game Container */
+.game-container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+#score, #timer {
+  font-size: 20px;
+  margin: 10px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background: linear-gradient(to right, #1e90ff, #00c6ff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* ✅ Game Area */
+#gameArea {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  max-width: 90vw;
+  max-height: 90vw;
+  background: #222;
+  border: 3px solid #fff;
+  margin: 20px auto 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* ✅ Kotak Target */
+.box {
+  width: 50px;
+  height: 50px;
+  background-color: #ff4757;
+  position: absolute;
+  cursor: pointer;
+  border-radius: 8px;
+  animation: fadeIn 0.3s ease-out;
+  transition: transform 0.2s ease, background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 10px #ff6b81aa;
+}
+
+.box:hover {
+  background-color: #ff6b81;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ff6b81;
+}
+
+/* ✅ Efek Partikel Klik */
+.particle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: gold;
+  position: absolute;
+  pointer-events: none;
+  animation: explode 0.6s ease-out forwards;
+  z-index: 999;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* ✅ Animasi box muncul */
+@keyframes fadeIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ✅ Game Over Text */
+#gameOverText {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e90ff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  box-shadow: 0 0 15px #1e90ff33;
+  transition: transform 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+  z-index: 1000;
+}
+
+#gameOverText.show {
+  display: block;
+  animation: bounceIn 0.6s ease-out;
+  box-shadow: 0 0 25px #1e90ff99;
+}
+
+
+
+/* ✅ Responsive (Mobile Friendly) */
+@media (max-width: 600px) {
+  .game-container {
+    margin: 20px 10px;
+    padding: 10px;
+    width: 90vw;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  #score, #timer {
+    font-size: 18px;
+  }
+
+  #gameArea {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  nav.main-navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #gameOverText {
+    font-size: 20px;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Efek Fade In */
+.fade-in {
+  opacity: 1 !important;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 1s ease, transform 0.4s ease;
+}
+
+/* Efek Fade Out */
+.fade-out {
+  opacity: 0 !important;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 1s ease, transform 0.4s ease;
+}
