@@ -4,103 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>🎮 Catch the Box Game</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #fff;
-    }
-
-    nav.main-navbar {
-      background-color: #1e1e1e;
-      padding: 15px 30px;
-      border-bottom: 2px solid #444;
-    }
-
-    nav.main-navbar ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    nav.main-navbar li {
-      margin-right: 20px;
-    }
-
-    nav.main-navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav.main-navbar a:hover {
-      color: #1e90ff;
-    }
-
-    .game-container {
-      max-width: 600px;
-      margin: 50px auto;
-      text-align: center;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-    }
-
-    #score, #timer {
-      font-size: 20px;
-      margin: 10px;
-    }
-
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      background: #1e90ff;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background-color: #0c7cd5;
-    }
-
-    #gameArea {
-      position: relative;
-      width: 500px;
-      height: 500px;
-      background: #222;
-      border: 3px solid #fff;
-      margin: 20px auto 0;
-      overflow: hidden;
-      border-radius: 12px;
-    }
-
-    .box {
-      width: 50px;
-      height: 50px;
-      background-color: #ff4757;
-      position: absolute;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: background-color 0.2s;
-    }
-
-    .box:hover {
-      background-color: #ff6b81;
-    }
-  </style>
+  <link rel="stylesheet" href="style game.css" />
 </head>
 <body>
 
@@ -116,69 +20,12 @@
     <h1>🎯 Catch the Box!</h1>
     <div id="score">Skor: 0</div>
     <div id="timer">Waktu: 30 detik</div>
-    <button onclick="startGame()">Mulai Game</button>
+    <button onclick="startGame()">🚀 Mulai Game</button>
     <div id="gameArea"></div>
+    <div id="gameOverText" style="display:none;"></div>
   </div>
 
-  <!-- ✅ Script -->
-  <script>
-    const gameArea = document.getElementById('gameArea');
-    const scoreDisplay = document.getElementById('score');
-    const timerDisplay = document.getElementById('timer');
-
-    let score = 0;
-    let timeLeft = 30;
-    let gameInterval;
-    let timerInterval;
-
-    function startGame() {
-      score = 0;
-      timeLeft = 30;
-      updateDisplay();
-
-      clearInterval(gameInterval);
-      clearInterval(timerInterval);
-
-      spawnBox();
-      gameInterval = setInterval(spawnBox, 1000);
-
-      timerInterval = setInterval(() => {
-        timeLeft--;
-        updateDisplay();
-        if (timeLeft <= 0) {
-          clearInterval(gameInterval);
-          clearInterval(timerInterval);
-          alert("⏰ Waktu Habis! Tetap semangat dan jangan lupa makan! Skormu: " + score);
-          gameArea.innerHTML = '';
-        }
-      }, 1000);
-    }
-
-    function updateDisplay() {
-      scoreDisplay.textContent = `Skor: ${score}`;
-      timerDisplay.textContent = `Waktu: ${timeLeft} detik`;
-    }
-
-    function spawnBox() {
-      const box = document.createElement('div');
-      box.classList.add('box');
-
-      const x = Math.random() * (gameArea.clientWidth - 50);
-      const y = Math.random() * (gameArea.clientHeight - 50);
-
-      box.style.left = `${x}px`;
-      box.style.top = `${y}px`;
-
-      box.onclick = () => {
-        score++;
-        updateDisplay();
-        gameArea.removeChild(box);
-      };
-
-      gameArea.innerHTML = ''; // Hanya 1 box aktif
-      gameArea.appendChild(box);
-    }
-  </script>
-
+    <!-- ✅ Link ke JavaScript eksternal -->
+  <script src="script game.js"></script>
 </body>
 </html>
